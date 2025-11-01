@@ -1,0 +1,29 @@
+.item-list-container {
+  padding: 4rem 2rem;
+  background-color: #f8f9fa;
+  min-height: calc(100vh - 200px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container-content {
+  text-align: center;
+  max-width: 800px;
+}
+
+.welcome-message {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #7f8c8d;
+  margin: 0;
+}
+
+
+
