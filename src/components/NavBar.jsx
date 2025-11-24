@@ -1,26 +1,29 @@
+import { Link } from 'react-router-dom';
 import CartWidget from './CartWidget';
 import './NavBar.css';
+
+const CATEGORIAS = [
+  { id: 'all', label: 'Todos' },
+  { id: 'electronica', label: 'Electrónica' },
+  { id: 'accesorios', label: 'Accesorios' },
+  { id: 'kits', label: 'Combos' },
+]
 
 function NavBar() {
   return (
     <nav className="navbar">
       <div className="navbar-container">
         <div className="navbar-logo">
-          <h2>Mi Tienda</h2>
+          <h2>
+            <Link to="/" className="logo-link">Mi Tienda</Link>
+          </h2>
         </div>
         <ul className="navbar-links">
-          <li>
-            <a href="#inicio">Inicio</a>
-          </li>
-          <li>
-            <a href="#productos">Productos</a>
-          </li>
-          <li>
-            <a href="#ofertas">Ofertas</a>
-          </li>
-          <li>
-            <a href="#contacto">Contacto</a>
-          </li>
+          {CATEGORIAS.map((cat) => (
+            <li key={cat.id}>
+              <Link to={cat.id === 'all' ? '/' : `/category/${cat.id}`}>{cat.label}</Link>
+            </li>
+          ))}
         </ul>
         <CartWidget />
       </div>
@@ -29,5 +32,6 @@ function NavBar() {
 }
 
 export default NavBar;
+
 
 
